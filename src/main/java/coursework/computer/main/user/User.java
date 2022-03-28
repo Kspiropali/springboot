@@ -2,7 +2,6 @@ package coursework.computer.main.user;
 
 import lombok.*;
 
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.Period;
@@ -22,6 +21,8 @@ public class User {
     )
     private Long id;
     private String name;
+    private String password;
+    private String surname;
     private String email;
     private LocalDate dob;
     @Transient
@@ -33,6 +34,13 @@ public class User {
 
     public User(String name, String email, LocalDate dob){
         this.name = name;
+        this.email = email;
+        this.dob = dob;
+    }
+
+    public User(String name, String password, String email, LocalDate dob){
+        this.name = name;
+        this.password = password;
         this.email = email;
         this.dob = dob;
     }

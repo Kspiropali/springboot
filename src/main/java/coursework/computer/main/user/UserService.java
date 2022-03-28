@@ -8,6 +8,7 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -24,10 +25,10 @@ public class UserService {
     }
 
     public void addNewUser(User user) {
-       /* Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
+        Optional<User> userOptional = userRepository.findUserByEmail(user.getEmail());
         if(userOptional.isPresent()){
             throw new IllegalStateException("email taken");
-        }*/
+        }
 
         user.setDob(LocalDate.of(2020, Month.APRIL, 5));
         userRepository.save(user);
@@ -44,7 +45,7 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(Long userId, String name, String email) {
+    public void updateUser(Long userId, String name, String surname, String email) {
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalStateException(
                 "user with id " + userId + "does not exist"
         ));
@@ -53,6 +54,12 @@ public class UserService {
                 name.length()>0 &&
                 !Objects.equals(user.getName(), name)){
             user.setName(name);
+        }
+
+        if(surname != null &&
+                surname.length()>0 &&
+                !Objects.equals(user.getSurname(), surname)){
+            user.setSurname(surname);
         }
 
         if(email != null &&

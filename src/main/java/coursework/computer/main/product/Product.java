@@ -3,6 +3,7 @@ package coursework.computer.main.product;
 import lombok.*;
 
 import javax.persistence.*;
+import java.io.File;
 import java.time.LocalDate;
 import java.time.Period;
 
@@ -22,17 +23,15 @@ public class Product {
     private Long id;
     private String name;
     private String description;
-    private LocalDate datePosted;
-    private byte image;
     private float price;
+    private LocalDate datePosted;
+    private String image;
 
-    /*public Integer getAge(){
-        return Period.between(datePosted, LocalDate.now()).getYears();
-    }*/
-
-    public Product(String name, String description, LocalDate datePosted){
+    public Product(String name, String description, float price, LocalDate datePosted, String image){
         this.name = name;
         this.description = description;
+        this.price = price;
         this.datePosted = datePosted;
+        this.image = image;
     }
 }
