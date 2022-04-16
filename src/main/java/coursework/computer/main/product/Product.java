@@ -24,14 +24,14 @@ public class Product {
     private String name;
     private String description;
     private float price;
-    private LocalDate datePosted;
     private String image;
 
-    public Product(String name, String description, float price, LocalDate datePosted, String image){
+    public Product(String name, String description, float price, String image){
         this.name = name;
         this.description = description;
         this.price = price;
-        this.datePosted = datePosted;
         this.image = image;
     }
+
+
 }

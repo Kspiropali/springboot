@@ -44,6 +44,6 @@ public class UserController {
             @RequestParam(required = false) String password,
             @RequestParam(required = false) String surname,
             @RequestParam(required = false) String email) {
-        userService.updateUser(userId, name, surname, email);
+        userService.updateUser(userId, name, surname, password, email);
     }
 }

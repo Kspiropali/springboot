@@ -1,14 +1,81 @@
-$(window).load(function() {
+$(window).load(function () {
     $('#slider').nivoSlider({
-        effect:'random',
-        slices:15,
-        boxCols:8,
-        boxRows:8,
-        animSpeed:500,
-        pauseTime:4000,
-        directionNav:false,
-        directionNavHide:false,
-        controlNav:false,
-        captionOpacity:1
+        effect: 'random',
+        slices: 15,
+        boxCols: 8,
+        boxRows: 8,
+        animSpeed: 500,
+        pauseTime: 4000,
+        directionNav: false,
+        directionNavHide: false,
+        controlNav: false,
+        captionOpacity: 1
     });
 });
+
+let products = [];
+function get_products(){
+    //Request products from server
+    fetch('http://localhost:8080/products')
+        .then((response) => response.json())
+        .then((responseJSON) => {
+            products = responseJSON;
+            display_products();
+        });
+}
+
+function display_products() {
+    console.log(products);
+
+    let half = Math.ceil(products.length/2);
+    let products_left = products.slice(0, half);
+    let products_right = products.slice(-half);
+
+    console.log(products_left);
+    console.log(products_right);
+
+    const products_left_content = products_left.map(product => {
+        return(
+            '<li>\n' +
+            '                            <div class="img"><a href="#"><img alt="" src="$'+product.image+'"></a></div>\n' +
+            '                            <div class="info">\n' +
+            '                                <a class="title" href="#">'+product.name+'</a>\n' +
+            '                                <p>'+product.description+'</p>\n' +
+            '                                <div class="price">\n' +
+            '                                    <span class="st">Our price:</span><strong>$'+product.price+'</strong>\n' +
+            '                                </div>\n' +
+            '                                <div class="actions">\n' +
+            '                                    <a href="#">Details</a>\n' +
+            '                                    <a href="#">Add to cart</a>\n' +
+            '                                </div>\n' +
+            '                            </div>\n' +
+            '                        </li>'
+        );
+    });
+
+    const products_right_content = products_right.map(product => {
+        return('<li>\n' +
+            '                            <div class="img"><a href="#"><img alt="" src="$'+product.image+'"></a></div>\n' +
+            '                            <div class="info">\n' +
+            '                                <a class="title" href="#">'+product.name+'</a>\n' +
+            '                                <div class="price">\n' +
+            '                                    <span class="usual">$'+(product.price+100)+'</span>&nbsp;\n' +
+            '                                    <span class="special">$'+product.price+'</span>\n' +
+            '                                </div>\n' +
+            '                            </div>\n' +
+            '                        </li>');
+    });
+
+    console.log(products_left_content);
+
+    //Left list contents
+    document.getElementById('products_left').innerHTML = products_left_content.join("");
+
+    //Right list contents
+    document.getElementById('products_right').innerHTML = products_right_content.join("");
+}
+
+
+$(document).ready(function () {
+    get_products();
+})

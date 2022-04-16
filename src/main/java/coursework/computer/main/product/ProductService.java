@@ -23,27 +23,27 @@ public class ProductService {
         return productRepository.findAll();
     }
 
-    public void addNewProduct(Product product) {
-       /* Optional<Product> ProductOptional = ProductRepository.findProductByEmail(Product.getEmail());
+    /*public void addNewProduct(Product product) {
+       *//* Optional<Product> ProductOptional = ProductRepository.findProductByEmail(Product.getEmail());
         if(ProductOptional.isPresent()){
             throw new IllegalStateException("email taken");
-        }*/
+        }*//*
 
         //product.setProductDatePosted(LocalDate.of(2020, Month.APRIL, 5));
         productRepository.save(product);
 
-    }
+    }*/
 
-    public void deleteProduct(Long ProductId) {
+    /*public void deleteProduct(Long ProductId) {
         boolean exists = productRepository.existsById(ProductId);
         if(!exists){
             throw new IllegalStateException("Product with id "+ ProductId + "does not exist");
         }
 
         productRepository.deleteById(ProductId);
-    }
+    }*/
 
-    @Transactional
+    /*@Transactional
     public void updateProduct(Long productId, String name, String description) {
         Product product = productRepository.findById(productId).orElseThrow(() -> new IllegalStateException(
                 "product with id " + productId + "does not exist"
@@ -60,13 +60,19 @@ public class ProductService {
                 !Objects.equals(product.getDescription(), description)){
             product.setDescription(description);
         }
-    }
+    }*/
 
     @Transactional
     public Product getProduct(Long productId) {
 
         return productRepository.findById(productId).orElseThrow(() -> new IllegalStateException(
                 "Product with id " + productId + "does not exist"
+        ));
+    }
+
+    public Product getProduct(String productName) {
+        return productRepository.findByName(productName).orElseThrow(() -> new IllegalStateException(
+                "Product with Name: " + productName + "does not exist"
         ));
     }
 }

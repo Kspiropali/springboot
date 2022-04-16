@@ -14,21 +14,15 @@ public class UserConfig {
     @Bean
     CommandLineRunner commandLineRunner(UserRepository repository){
         return args -> {
-            User mariam = new User(
-                    "Maria",
-                    "securepass",
-                    "maria@outlook.com",
-                    LocalDate.of(2000, Month.JANUARY, 5)
+            User kristian = new User(
+                    "Kristian",
+                    "Spiropali",
+                    "kristian",
+                    "kris@kris.com",
+                    LocalDate.of(2000, Month.JANUARY, 1)
             );
 
-            User john = new User(
-                    "John",
-                    "securepass",
-                    "john@jahoo.com",
-                    LocalDate.of(2000, Month.JANUARY, 5)
-            );
-
-            repository.saveAll(List.of(mariam, john));
+            repository.saveAll(List.of(kristian));
         };
     }
 }

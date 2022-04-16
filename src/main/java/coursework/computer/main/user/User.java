@@ -32,14 +32,22 @@ public class User {
         return Period.between(dob, LocalDate.now()).getYears();
     }
 
-    public User(String name, String email, LocalDate dob){
+   /* public User(String name, String email, LocalDate dob){
         this.name = name;
         this.email = email;
         this.dob = dob;
-    }
+    }*/
 
-    public User(String name, String password, String email, LocalDate dob){
+    /*public User(String name, String password, String email, LocalDate dob){
         this.name = name;
+        this.password = password;
+        this.email = email;
+        this.dob = dob;
+    }*/
+
+    public User(String name, String surname, String password, String email, LocalDate dob){
+        this.name = name;
+        this.surname = surname;
         this.password = password;
         this.email = email;
         this.dob = dob;

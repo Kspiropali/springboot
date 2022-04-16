@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Computer Shop</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
@@ -14,7 +15,7 @@
 
     <!-- Linking scripts -->
     <script src="../scripts/home_page/jquery.js"></script>
-    <script src="../scripts/home_page/jquery.nivo.slider.pack.js"></script>   
+    <script src="../scripts/home_page/jquery.nivo.slider.pack.js"></script>
     <script src="../scripts/home_page/main.js"></script>
 
 </head>
@@ -22,269 +23,109 @@
 
 <div class="container">
 
-        <header><!-- Defining the header section of the page -->
+    <header><!-- Defining the header section of the page -->
 
-            <nav><!-- Defining the navigation menu -->
-                <ul>
-                    <li class="selected"><a href="home_page.html">Home</a></li>
-                    <li><a href="#">Specials</a></li>
-                    <li><a href="#">All Products</a></li>
-                    <li><a href="#">Contact us</a></li>
-                    <li><a href="#">About</a></li>
-                </ul>
-            </nav>
+        <nav><!-- Defining the navigation menu -->
+            <ul>
+                <li class="selected"><a href="home_page.html">Home</a></li>
+                <li><a href="../static/register.html">Register</a></li>
+                <li><a href="../static/login_simple.html">Login</a></li>
+            </ul>
+        </nav>
 
 
-            <div class="top_head"><!-- Defining the top head element -->
-                <div class="logo"><!-- Defining the logo element -->
-                    <a href="home_page.html">
-                        <img src="../images/computer_logo_home.jpg" title="E-Store template" alt="E-Store template" height="100" width="925"/>
-                    </a>
-                </div>
-
-                <section id="search"><!-- Search form -->
-                    <form action="#" onsubmit="return false;" method="get">
-                        <label>
-                            <input type="text" onfocus="if (this.value ==='Search..' ) this.value=''" onblur="if (this.value==='') this.value='Search..'" value="Search.." name="q">
-                        </label>
-                        <input type="submit" value="Search">
-                    </form>
-                </section>
-            </div>
-
-            <section id="submenu"><!-- Defining the sub menu -->
-                <ul>
-                    <li><a href="#">Prebuilt Computers</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Computer Parts</a></li>
-                    <li><a href="#">Miscellaneous</a></li>
-                    <li><a href="#">Used Computers on Sale</a></li>
-                </ul>
+        <div class="top_head"><!-- Defining the top head element -->
+            <section id="search"><!-- Search form -->
+                <form action="#" onsubmit="return false;" method="get">
+                    <label>
+                        <input type="text" onfocus="if (this.value ==='Search..' ) this.value=''"
+                               onblur="if (this.value==='') this.value='Search..'" value="Search.." name="q">
+                    </label>
+                    <input type="submit" value="Search">
+                </form>
             </section>
+        </div>
 
-        </header>
+    </header>
 
-        <div id="slider-main"><!-- Defining the main content section -->
+    <div id="slider-main"><!-- Defining the main content section -->
 
         <!-- Promo slider -->
-            <section id="slider-wrapper">
-                <div id="slider" class="nivoSlider">
-                    <img style="display: none;" src="../images/promo1.jpg" alt="" title="#htmlcaption-1">
-                    <img style="display: none;" src="../images/promo2.jpg" alt="" title="#htmlcaption-2">
-                    <img style="display: none;" src="../images/promo3.jpg" alt="" title="#htmlcaption-3">
-                </div>
-                <div id="htmlcaption-1" class="nivo-html-caption">
-                    <h5 class="p2">Welcome to our Computer E-Shop</h5>
-                    <p>Always providing top notch computers at affordable prices!</p>
-                </div>
-                <div id="htmlcaption-2" class="nivo-html-caption">
-                    <h5 class="p2">Looking for High-Performance Laptops?</h5>
-                    <p>Whether you are a programmer, gamer or casual user you can get a buck for your money!</p>
-                </div>
-                <div id="htmlcaption-3" class="nivo-html-caption">
-                    <h5 class="p2">Certified Graphics Cards seller</h5>
-                    <p>We sell only original Graphics cards straight from the factory!</p>
-                </div>
-                <div id="htmlcaption-4" class="nivo-html-caption">
-                    <h5 class="p2">Have a question? Ask away</h5>
-                    <p>We offer 24/7 availability for any concerns you may have!</p>
-                </div>
-            </section>
-        </div>
+        <section id="slider-wrapper">
+            <div id="slider" class="nivoSlider">
+                <img style="display: none;" src="../images/promo1.jpg" alt="" title="#htmlcaption-1">
+                <img style="display: none;" src="../images/promo2.jpg" alt="" title="#htmlcaption-2">
+                <img style="display: none;" src="../images/promo3.jpg" alt="" title="#htmlcaption-3">
+            </div>
+            <div id="htmlcaption-1" class="nivo-html-caption">
+                <h5 class="p2">Welcome to our Computer E-Shop</h5>
+                <p>Always providing top notch computers at affordable prices!</p>
+            </div>
+            <div id="htmlcaption-2" class="nivo-html-caption">
+                <h5 class="p2">Looking for High-Performance Laptops?</h5>
+                <p>Whether you are a programmer, gamer or casual user you can get a buck for your money!</p>
+            </div>
+            <div id="htmlcaption-3" class="nivo-html-caption">
+                <h5 class="p2">Certified Graphics Cards seller</h5>
+                <p>We sell only original Graphics cards straight from the factory!</p>
+            </div>
+            <div id="htmlcaption-4" class="nivo-html-caption">
+                <h5 class="p2">Have a question? Ask away</h5>
+                <p>We offer 24/7 availability for any concerns you may have!</p>
+            </div>
+        </section>
+    </div>
 
-        <div id="main"><!-- Defining submain content section -->
-            <section id="content"><!-- Defining the content section #2 -->
-                <div id="left">
-                    <h3>Last products</h3>
-                    <ul>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post1.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 1</a>
-                                <p>long description here 1</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$550.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post2.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 2</a>
-                                <p>long description here 2</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$250.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post3.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 3</a>
-                                <p>long description here 3</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$350.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post4.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 4</a>
-                                <p>long description here 1</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$550.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post5.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 5</a>
-                                <p>long description here 2</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$250.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post6.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 6</a>
-                                <p>long description here 3</p>
-                                <div class="price">
-                                    <span class="st">Our price:</span><strong>$350.00</strong>
-                                </div>
-                                <div class="actions">
-                                    <a href="#">Details</a>
-                                    <a href="#">Add to cart</a>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div id="right">
-                    <h3>Top sells</h3>
-                    <ul>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post6.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 7</a>
-                                <div class="price">
-                                    <span class="usual">$600.00 </span>&nbsp;
-                                    <span class="special">$500.00</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post5.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 8</a>
-                                <div class="price">
-                                    <span class="usual">$500.00 </span>&nbsp;
-                                    <span class="special">$400.00</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post4.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 9</a>
-                                <div class="price">
-                                    <span class="usual">$700.00 </span>&nbsp;
-                                    <span class="special">$600.25</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post3.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 10</a>
-                                <div class="price">
-                                    <span class="usual">$805.00 </span>&nbsp;
-                                    <span class="special">$714.25</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post2.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 11</a>
-                                <div class="price">
-                                    <span class="usual">$1205.00 </span>&nbsp;
-                                    <span class="special">$1000.25</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="img"><a href="#"><img alt="" src="../images/post1.jpg"></a></div>
-                            <div class="info">
-                                <a class="title" href="#">Product 12</a>
-                                <div class="price">
-                                    <span class="usual">$200.00 </span>&nbsp;
-                                    <span class="special">$190.25</span>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-        </div>
+    <div id="main"><!-- Defining submain content section -->
+        <section id="content"><!-- Defining the content section #2 -->
+            <div id="left">
+                <h3>Last products</h3>
+                <ul id="products_left">
+
+                </ul>
+            </div>
+            <div id="right">
+                <h3>Top sells</h3>
+                <ul id="products_right">
+
+                </ul>
+            </div>
+        </section>
+    </div>
 
     <footer class="footer-distributed">
 
         <div class="footer-left">
 
-            <h3>Company<span>logo</span></h3>
+            <h3>Tech<span>Store</span></h3>
 
             <p class="footer-links">
-                <a href="#" >Home</a>
+                <a href="home_page.html">Home</a>
 
                 <a href="#">About</a>
 
-                <a href="#">Faq</a>
-
                 <a href="#">Contact</a>
+
             </p>
 
-            <p class="footer-company-name">Company Name © 2015</p>
+            <p class="footer-company-name">TechStore © 2022</p>
         </div>
 
         <div class="footer-center">
 
             <div>
                 <i class="fa fa-map-marker"></i>
-                <p><span>444 S. Cedros Ave</span> Solana Beach, California</p>
+                <p><span>314 Somewhere Road</span>Main Beach, Hawaii</p>
             </div>
 
             <div>
                 <i class="fa fa-phone"></i>
-                <p>+1.555.555.5555</p>
+                <p>+4412321235</p>
             </div>
 
             <div>
                 <i class="fa fa-envelope"></i>
-                <p><a href="mailto:support@company.com">support@company.com</a></p>
+                <p><a href="mailto:techstore@store.uk">techstore@store.uk</a></p>
             </div>
 
         </div>
@@ -293,7 +134,8 @@
 
             <p class="footer-company-about">
                 <span>About the company</span>
-                Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                TechStore is an electronics shop dedicated to distribute the highest quality computers, laptops and
+                parts
             </p>
 
             <div class="footer-icons">
@@ -309,4 +151,5 @@
 
     </footer>
 </div>
-</body></html>
+</body>
+</html>

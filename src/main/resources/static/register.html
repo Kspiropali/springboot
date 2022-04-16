@@ -1,72 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Register Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  <script src="../scripts/register.js"></script>
+    <meta charset="utf-8">
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="../styles/misc/font-awesome.css">
+    <script src="../scripts/home_page/jquery.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <script type="text/javascript" src="../scripts/register.js"></script>
 </head>
 <body>
 
-<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-<div class="container bootstrap snippets bootdey">
-  <div class="header">
-    <ul class="nav nav-pills pull-right">
-      <li ><a href="home_page.html">Home</a></li>
-      <li class="active"><a href="http://getbootstrap.com/examples/jumbotron-narrow/#">Register</a></li>
-      <li><a href="">About</a></li>
-    </ul>
-    <h3 class="text-muted prj-name">Project name</h3>
-  </div>
-  <div id="mtoast" onclick="this.style.display='none'"></div>
-  <div class="text-center" style="min-height:400px;height:auto;">
-    <div class="col-md-10 col-md-offset-2">
-      <form class="form-horizontal" role="form">
-        <div class="form-group text-center">
-          <div class="col-sm-10 reg-icon">
-            <span class="fa fa-user fa-3x">Sign up</span>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="name" placeholder="Name">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="email" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="dob" placeholder="Date Of Birth(YEAR-MONTH-DAY)">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="password" placeholder="Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="confirm_password" placeholder="Confirm Password">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-info" id="register" onclick="checkAlldetails()">
-              <span class="glyphicon glyphicon-share-alt"></span>
-              Register
-            </button>
-          </div>
-        </div>
-      </form>
+
+<div class="container">
+    <div class="header">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="home_page.html">Home</a></li>
+            <li class="active"><a href="">Register</a></li>
+            <li><a href="">About</a></li>
+        </ul>
+        <h3 class="text-muted prj-name">TechStore User Registration</h3>
     </div>
-  </div>
+    <div id="mtoast" onclick="this.style.display='none'"></div>
+    <div class="text-center" style="min-height:400px;height:auto;">
+        <div class="col-md-10 col-md-offset-2">
+            <form class="form-horizontal" role="form">
+                <div class="form-group text-center">
+                    <div class="col-sm-10 reg-icon">
+                        <span class="fa fa-user fa-3x">Sign up</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" placeholder="Name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="surname" placeholder="Surname">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="email" class="form-control" id="email" placeholder="Email Address">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dob" placeholder="Date Of Birth(YEAR-MONTH-DAY)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <input type="password" class="form-control" id="confirm_password"
+                               placeholder="Confirm Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-info" id="register" onclick="checkAlldetails()">
+                            <span class="glyphicon glyphicon-share-alt"></span>
+                            Register
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>
 </body>
 </html>

@@ -45,7 +45,7 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(Long userId, String name, String surname, String email) {
+    public void updateUser(Long userId, String name, String surname, String password, String email) {
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalStateException(
                 "user with id " + userId + "does not exist"
         ));
@@ -60,6 +60,12 @@ public class UserService {
                 surname.length()>0 &&
                 !Objects.equals(user.getSurname(), surname)){
             user.setSurname(surname);
+        }
+
+        if(password != null &&
+                password.length()>0 &&
+                !Objects.equals(user.getPassword(), password)){
+            user.setPassword(password);
         }
 
         if(email != null &&
