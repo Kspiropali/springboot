@@ -1,13 +1,9 @@
 package coursework.computer.main.product;
 
-import coursework.computer.main.user.User;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import java.io.File;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.Arrays;
 import java.util.List;
 
