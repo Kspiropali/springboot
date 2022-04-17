@@ -24,7 +24,7 @@ img {
 
 /* header section */
 header {
-    background: url("../../images/header-bg.png") repeat scroll left top #fff;
+    background: url("../../images/body-bg.jpg") repeat scroll left top #fff;
     border-bottom:2px solid #e0e0e0;
     position: relative;
     z-index: 10;
@@ -57,7 +57,7 @@ header {
 #search form input[type="submit"] {
     background-color: #FFFFFF;
     border: 1px solid #E0E0E0;
-    border-left-width:0px;
+    border-left-width:0;
     color: #383838;
     cursor:pointer;
     float: left;
@@ -208,7 +208,7 @@ nav ul li a:hover, nav ul li.selected a {
     background-color: #fbfbfb;
 }
 #content #right ul li:first-child {
-    border-width: none;
+    border-width: 0;
 }
 #content #left ul li .img {
     text-align: center;

@@ -7,7 +7,7 @@ import java.io.File;
 import java.time.LocalDate;
 import java.time.Period;
 
-@AllArgsConstructor @NoArgsConstructor @Getter @Setter @ToString
+@NoArgsConstructor @Getter @Setter @ToString
 @Entity @Table(name = "_product")
 public class Product {
     @Id
@@ -26,7 +26,8 @@ public class Product {
     private float price;
     private String image;
 
-    public Product(String name, String description, float price, String image){
+    public Product(Long id, String name, String description, float price, String image){
+        this.id = id;
         this.name = name;
         this.description = description;
         this.price = price;

@@ -48,7 +48,7 @@ function display_products() {
             '                                    <span class="st">Our price:</span><strong>$' + product.price + '</strong>\n' +
             '                                </div>\n' +
             '                                <div class="actions">\n' +
-            '                                    <a href="http://localhost:8080/products/get/'+product.name+'">Details</a>\n' +
+            '                                    <a href="http://localhost:63342/main/product_details.html/?id='+product.id+'">Details</a>\n' +
             '                                    <a href="#">Add to cart</a>\n' +
             '                                </div>\n' +
             '                            </div>\n' +
@@ -60,7 +60,7 @@ function display_products() {
         return ('<li>\n' +
             '                            <div class="img"><a href="#"><img alt="" src="$' + "../../images/small/"+product.image + '"></a></div>\n' +
             '                            <div class="info">\n' +
-            '                                <a class="title" href="http://localhost:8080/products/get/'+product.name+'">' + product.name + '</a>\n' +
+            '                                <a class="title" href="http://localhost:63342/main/product_details.html/?id='+product.id+'">' + product.name + '</a>\n' +
             '                                <div class="price">\n' +
             '                                    <span class="usual">$' + (product.price + 100) + '</span>&nbsp;\n' +
             '                                    <span class="special">$' + product.price + '</span>\n' +
