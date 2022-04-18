@@ -82,4 +82,23 @@ public class UserService {
                 "user with id " + userId + "does not exist"
         ));
     }
+
+    public int checkuserDetails(String email, String password) {
+        String finalEmail = email.split("&")[0].split("=")[1].replace("%40", "@");
+        String finalPassword = email.split("&")[1].split("=")[1];
+
+        System.out.println("EMAIL: "+finalEmail+"\nPASS: "+finalPassword);
+
+        User user = userRepository.findUserByEmail(finalEmail).orElseThrow(() -> new IllegalStateException(
+                "User with email: " + finalEmail + " does not exist"
+        ));
+
+        if(finalPassword.equals(user.getPassword())){
+            System.out.println("Passwords Match!");
+            return 0;
+        }else {
+            System.out.println("Password do not match!");
+            return 1;
+        }
+    }
 }

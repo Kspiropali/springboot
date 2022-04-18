@@ -20,13 +20,13 @@ public class Product {
             strategy = GenerationType.SEQUENCE,
             generator = "products_sequence"
     )
-    private Long id;
+    private Integer id;
     private String name;
     private String description;
     private float price;
     private String image;
 
-    public Product(Long id, String name, String description, float price, String image){
+    public Product(Integer id, String name, String description, float price, String image){
         this.id = id;
         this.name = name;
         this.description = description;

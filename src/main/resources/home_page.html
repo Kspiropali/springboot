@@ -9,7 +9,7 @@
 
     <!-- Linking styles -->
     <link rel="stylesheet" href="/styles/main_page/reset.css" type="text/css" media="screen">
-    <link rel="stylesheet" href="/styles/main_page/style.css" type="text/css" media="screen">
+    <link rel="stylesheet" href="/styles/style.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/styles/main_page/nivo-slider.css" type="text/css" media="screen">
     <link rel="stylesheet" href="/styles/main_page/footer.css" type="text/css" media="screen">
 
@@ -28,22 +28,15 @@
         <nav><!-- Defining the navigation menu -->
             <ul>
                 <li class="selected"><a href="home_page.html">Home</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login_simple.html">Login</a></li>
+                <li><a href="http://localhost:63342/main/register.html">Register</a></li>
+                <li><a href="http://localhost:63342/main/login.html">Login</a></li>
             </ul>
         </nav>
 
         <div class="top_head"><!-- Defining the top head element -->
-            <section id="search"> Search form
-                <!--<form action="#" onsubmit="return false;" method="get">
-                    <label>
-                        <input type="text" onfocus="if (this.value ==='Search..' ) this.value=''"
-                               onblur="if (this.value==='') this.value='Search..'" value="Search.." name="q">
-                    </label>
-                    <input type="submit" value="Search">
-                </form>-->
+            <section id="search"> Search Products:
                 <label for="products"></label>
-                <input type="text" list="products" id="products_autocomplete" onkeypress="on_enter_pressed()"/>
+                <input type="text" list="products" id="products_autocomplete" size="40" onkeydown="on_enter_pressed()"/>
                 <datalist id="products">
                 </datalist>
             </section>

@@ -22,7 +22,7 @@ public class ProductController {
     }
 
     @GetMapping(path = "/get/{productId}")
-    public Product getProduct(@PathVariable Long productId) {
+    public Product getProduct(@PathVariable Integer productId) {
         return productService.getProduct(productId);
     }
 
@@ -38,13 +38,13 @@ public class ProductController {
     }*/
 
     /*@DeleteMapping(path = "/delete/{productId}")
-    public void deleteProduct(@PathVariable("productId") Long productId){
+    public void deleteProduct(@PathVariable("productId") integer productId){
         productService.deleteProduct(productId);
     }
 */
    /* @PutMapping(path = "/update/{productId}")
     public void updateProduct(
-            @PathVariable("productId") Long productId,
+            @PathVariable("productId") Integer productId,
             @RequestParam(required = false) String name,
             @RequestParam(required = false) String description) {
         productService.updateProduct(productId, name, description);

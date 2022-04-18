@@ -3,6 +3,8 @@ package coursework.computer.main.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @RestController
@@ -30,6 +32,11 @@ public class UserController {
     public void registerNewUser(@RequestBody User user){
         System.out.println(user.toString());
         userService.addNewUser(user);
+    }
+
+    @PostMapping(path = "/validate")
+    public int checkDetails(@RequestBody String email, @RequestBody String password){
+        return userService.checkuserDetails(email, password);
     }
 
     @DeleteMapping(path = "/delete/{userId}")

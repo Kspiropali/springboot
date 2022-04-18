@@ -85,24 +85,32 @@ function search_products() {
     document.getElementById('products').innerHTML = products_autocomplete.join("");
 }
 
-$(document).ready(function () {
-    get_products();
-})
+
 
 function on_enter_pressed(){
     let answer, product_name;
-    if (event.keyCode == 13) {
+    if (event.keyCode === 13) {
 
         product_name = products.map(product => {
             return (product.name);
         });
 
         answer = document.getElementById('products_autocomplete').value;
+        let id = 1;
 
         product_name.forEach(product => {
             if (product === answer) {
-                window.location.assign("product_details.html");
+                window.location.assign("http://localhost:63342/main/product_details.html/?id="+id);
+            }else{
+                id++;
             }
         })
+    }else if(event.keyCode === 8){
+        document.getElementById("products_autocomplete").value = " ";
     }
 }
+
+$(document).ready(function () {
+
+    get_products();
+})

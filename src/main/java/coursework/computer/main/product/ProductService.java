@@ -44,7 +44,7 @@ public class ProductService {
     }*/
 
     /*@Transactional
-    public void updateProduct(Long productId, String name, String description) {
+    public void updateProduct(int productId, String name, String description) {
         Product product = productRepository.findById(productId).orElseThrow(() -> new IllegalStateException(
                 "product with id " + productId + "does not exist"
         ));
@@ -63,7 +63,7 @@ public class ProductService {
     }*/
 
     @Transactional
-    public Product getProduct(Long productId) {
+    public Product getProduct(Integer productId) {
 
         return productRepository.findById(productId).orElseThrow(() -> new IllegalStateException(
                 "Product with id " + productId + "does not exist"

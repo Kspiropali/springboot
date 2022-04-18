@@ -1,30 +1,40 @@
+let product;
 
-//let product;
-function get_product(){
-    console.log(window.location.href)
-    alert(window.location.href);
+function get_product() {
+    let id = window.location.href.split("?")[1].split("=")[1];
+    console.log(id);
+
+    fetch('http://localhost:8080/products/get/' + id)
+        .then((response) => response.json())
+        .then((responseJSON) => {
+            product = responseJSON;
+            display_product();
+        });
 }
 
-    //get productid from webpage link
-    //append prodId in below url
 
-    //fetch('http://localhost:8080/products')
-    //         .then((response) => response.json())
-    //         .then((responseJSON) => {
-    //             product = responseJSON;
-    //             display_product();
-    //
-    //
-    //         });
+function display_product()
+{
+
+    document.getElementById('productImage').innerHTML = '<img src="' +" ../images/big/" + product.image + '" class="img" width="500" height="350" alt=""/>';
+
+    document.getElementById('product_name').innerHTML = ' '+ product.name+'\n' +
+        '                    <small>Product by Kristian</small>\n' +
+        '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
+        '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
+        '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
+        '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
+        '                    <i class="fa fa-star fa-2x text-muted"></i>\n' +
+        '                    <span class="fa fa-2x">' +
+        '                    <h5>(109) Votes</h5></span>\n' +
+        '                    <a>800 customer reviews</a>';
 
 
+    document.getElementById('product_price').innerHTML = '$'+parseInt(product.price)+'\n' +
+        '                    <small>*includes tax</small>'
 
-//display_product(){
-//
-//  set product details to html
-//  document.getElementByClass('productImage').innerHTML = '<img src="'+product.image+'" class="img-responsive" alt=""/>';
-//  price
-// }
+    document.getElementById('product_description').innerHTML = ' '+product.description+ ' ';
+}
 
 $(document).ready(function () {
     get_product();

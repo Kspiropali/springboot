@@ -37,8 +37,4 @@ function checkAlldetails() {
         success: response => console.log(response),
         error: e => console.log(e)
     });
-
-
-
-    alert("DONE");
 }
