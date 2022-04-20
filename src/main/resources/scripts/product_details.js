@@ -16,10 +16,10 @@ function get_product() {
 function display_product()
 {
 
-    document.getElementById('productImage').innerHTML = '<img src="' +" ../images/big/" + product.image + '" class="img" width="500" height="350" alt=""/>';
+    document.getElementById('productImage').innerHTML = '<img src="' +"/images/big/" + product.image + '" class="img" width="500" height="350" alt=""/>';
 
     document.getElementById('product_name').innerHTML = ' '+ product.name+'\n' +
-        '                    <small>Product by Kristian</small>\n' +
+        '                    <small>     <pre></pre>   </small>\n' +
         '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
         '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
         '                    <i class="fa fa-star fa-2x text-primary"></i>\n' +
@@ -33,7 +33,11 @@ function display_product()
     document.getElementById('product_price').innerHTML = '$'+parseInt(product.price)+'\n' +
         '                    <small>*includes tax</small>'
 
-    document.getElementById('product_description').innerHTML = ' '+product.description+ ' ';
+    document.getElementById('myTabContent').innerHTML = '<br/>' +
+        '                            <strong>Description</strong>\n' +
+        '                            <p>\n' +
+        '\n' +product.description+
+        '                            </p>';
 }
 
 $(document).ready(function () {

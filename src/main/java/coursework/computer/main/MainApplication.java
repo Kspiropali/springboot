@@ -11,7 +11,7 @@ public class MainApplication {
         SpringApplication.run(MainApplication.class, args);
 
         Runtime rt = Runtime.getRuntime();
-        String url = "http://localhost:63342/main/home_page.html";
+        String url = "http://localhost:63342/springboot/src/main/resources/home_page.html";
         String[] browsers = { /*"chromium", */"firefox"/*, "mozilla", "epiphany", "konqueror",
                 "netscape", "opera", "links", "lynx"*/ };
 

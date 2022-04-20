@@ -28,6 +28,7 @@ public class UserController {
 
     @PostMapping(path = "/register")
     public void registerNewUser(@RequestBody User user){
+        user.setEmail(user.getEmail().replace("%40", "@"));
         System.out.println(user.toString());
         userService.addNewUser(user);
     }

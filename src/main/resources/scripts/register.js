@@ -38,7 +38,7 @@ function checkAlldetails() {
         });
     });
 
-    window.location.href = "http://localhost:63342/main/home_page.html";
+    window.location.href = "http://localhost:63342/springboot/src/main/resources/home_page.html";
 
 }
 

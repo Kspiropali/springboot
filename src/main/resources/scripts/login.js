@@ -30,7 +30,7 @@ function validate_details() {
                     }
                 } else {
                     alert("Successfully Logged in with User: " + r.responseText);
-                    window.location.href = "http://localhost:63342/main/home_page.html";
+                    window.location.href = "home_page.html?id="+r.responseText;
                 }
             }
         });
