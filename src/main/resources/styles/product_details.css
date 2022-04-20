@@ -1,11 +1,12 @@
 body {
+    padding: 100px;
     margin-top: 20px;
     background: #eee;
 }
 
 
 .product-content {
-    border: 1px solid #dfe5e9;
+    border: 6px solid #dfe5e9;
     margin-bottom: 20px;
     margin-top: 12px;
     background: #fff
@@ -24,7 +25,7 @@ body {
 }
 
 .product-content .product-deatil {
-    border-bottom: 1px solid #dfe5e9;
+    border-bottom: 100px solid #dfe5e9;
     padding-bottom: 17px;
     padding-left: 16px;
     padding-top: 16px;

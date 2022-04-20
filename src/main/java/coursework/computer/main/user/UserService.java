@@ -32,7 +32,6 @@ public class UserService {
 
         user.setDob(LocalDate.of(2020, Month.APRIL, 5));
         userRepository.save(user);
-
     }
 
     public void deleteUser(Long userId) {
@@ -83,22 +82,20 @@ public class UserService {
         ));
     }
 
-    public int checkuserDetails(String email, String password) {
-        String finalEmail = email.split("&")[0].split("=")[1].replace("%40", "@");
-        String finalPassword = email.split("&")[1].split("=")[1];
+    public String checkuserDetails(String email, String password) {
 
-        System.out.println("EMAIL: "+finalEmail+"\nPASS: "+finalPassword);
+        System.out.println("EMAIL: "+email+"\nPASS: "+password);
 
-        User user = userRepository.findUserByEmail(finalEmail).orElseThrow(() -> new IllegalStateException(
-                "User with email: " + finalEmail + " does not exist"
+        User user = userRepository.findUserByEmail(email).orElseThrow(() -> new IllegalStateException(
+                "User with email: " + email + " does not exist"
         ));
 
-        if(finalPassword.equals(user.getPassword())){
+        if(password.equals(user.getPassword())){
             System.out.println("Passwords Match!");
-            return 0;
+            return user.getName();
         }else {
             System.out.println("Password do not match!");
-            return 1;
+            return null;
         }
     }
 }

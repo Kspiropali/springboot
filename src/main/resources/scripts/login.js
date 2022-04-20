@@ -1,42 +1,39 @@
-function validate_details(){
+function validate_details() {
     const regex = new RegExp('^[a-z]{3,10}\@[a-z]{3,10}\.[a-z]{3,6}$');
     let email_send = document.getElementById("email").value;
     let password_send = document.getElementById("password").value;
 
     if (!regex.test(email_send)) {
         alert("Email not in correct format");
+        window.location.href = window.location.pathname;
         return;
     }
-
-    $.ajax({
-        url: "http://localhost:8080/users/validate/",
-        data: "email=kris@kris.com&password=kristian",
-        type: "POST",
-        contentType: "application/x-www-form-urlencoded",
-        success: response => console.log(response),
-        error: e => console.log(e)
-    });
-
-
-
-
-    /*<script>
-
-        $(document).ready(function() {
-        let email = document.getElementById("email").value;
-        let password = document.getElementById("password").value
-        $('#submit').click(function() {
-
+    var frm = $('#login_form');
+    frm.submit(function (ev) {
+        ev.preventDefault();
+        /*ev.stopImmediatePropagation();*/
         $.ajax({
-        url: "http://localhost:8080/users/validate/",
-        data: "email="+email+"&password="+password,
-        type: "POST",
-        contentType: "application/x-www-form-urlencoded",
-        success: response => console.log(response),
-        error: e => console.log(e)
-    });
-    });
-
-    });
-    </script>*/
+            url: "http://localhost:8080/users/validate?email=" + email_send + "&password=" + password_send,
+            dataType: 'application/json',
+            type: 'POST',/*
+            responseType: 'application/json',
+            contentType: 'application/json',*/
+            headers: {Connection: close},
+            complete: function (r) {
+                if (r.responseText[0] === "{") {
+                    if (JSON.parse(r.responseText).status === 500) {
+                        alert("This user does not exist");
+                        window.location.href = window.location.pathname;
+                    } else {
+                        alert("Unknown Error happened; Try again later!");
+                        window.location.href = window.location.pathname;
+                    }
+                } else {
+                    alert("Successfully Logged in with User: " + r.responseText);
+                    window.location.href = "http://localhost:63342/main/home_page.html";
+                }
+            }
+        });
+    })
+    ;
 }

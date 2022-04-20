@@ -19,22 +19,26 @@ function checkAlldetails() {
     }
 
     const user = {
-        "name": name,
-        "surname": surname,
-        "password": password,
-        "email": email,
-        "dob": dob
+        "name": encodeURIComponent(name),
+        "surname": encodeURIComponent(surname),
+        "password": encodeURIComponent(password),
+        "email": encodeURIComponent(email),
+        "dob": encodeURIComponent(dob)
     };
 
-    console.log(user);
-
-    $.ajax({
-        url: "http://localhost:8080/users/register",
-        data: JSON.stringify(user),
-        dataType: 'application/json',
-        type: 'POST',
-        contentType: 'application/json',
-        success: response => console.log(response),
-        error: e => console.log(e)
+    var frm = $('#register_form');
+    frm.submit(function (ev) {
+        ev.preventDefault();
+        $.ajax({
+            url: "http://localhost:8080/users/register/",
+            data: JSON.stringify(user),
+            dataType: 'application/json',
+            type: 'POST',
+            contentType: 'application/json',
+        });
     });
+
+    window.location.href = "http://localhost:63342/main/home_page.html";
+
 }
+

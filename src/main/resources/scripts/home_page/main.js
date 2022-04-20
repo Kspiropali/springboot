@@ -34,9 +34,6 @@ function display_products() {
     let products_left = products.slice(0, half);
     let products_right = products.slice(-half);
 
-    /*console.log(products_left);
-    console.log(products_right);*/
-
     const products_left_content = products_left.map(product => {
         return (
             '<li>\n' +
@@ -68,8 +65,6 @@ function display_products() {
             '                            </div>\n' +
             '                        </li>');
     });
-
-    /*console.log(products_left_content);*/
 
     //Left list contents
     document.getElementById('products_left').innerHTML = products_left_content.join("");
@@ -111,6 +106,23 @@ function on_enter_pressed(){
 }
 
 $(document).ready(function () {
-
+    login();
     get_products();
 })
+
+function login(){
+    let username = "Kristian";
+    let isLogged = true;
+    if(!isLogged){
+        document.getElementById('page_contents').innerHTML = '<li class="selected"><a href="home_page.html">Home</a></li>\n' +
+            '                <li><a href="http://localhost:63342/main/register.html">Register</a></li>\n' +
+            '                <li><a href="http://localhost:63342/main/login.html">Login</a></li>';
+        return;
+    }
+
+    document.getElementById('page_contents').innerHTML = '<li class="selected"><a href="home_page.html">Home</a></li>\n' +
+        '                <li><a href="http://localhost:63342/main/account_settings.html">Account Settings</a></li>\n' +
+        '                <li><a href="#">Logout</a></li>'
+
+    document.getElementById('user_welcome').innerHTML = '<b>  <strong> HI USER > '+username+' < </strong> </b>'
+}

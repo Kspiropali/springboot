@@ -3,8 +3,6 @@ package coursework.computer.main.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.UnsupportedEncodingException;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @RestController
@@ -35,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping(path = "/validate")
-    public int checkDetails(@RequestBody String email, @RequestBody String password){
+    public String checkDetails(@RequestParam("email") String email, @RequestParam("password") String password){
         return userService.checkuserDetails(email, password);
     }
 
