@@ -15,6 +15,7 @@ function validate_details() {
         $.ajax({
             url: "http://localhost:8080/users/validate?email=" + email_send + "&password=" + password_send,
             dataType: 'application/json',
+            crossDomain: true,
             type: 'POST',/*
             responseType: 'application/json',
             contentType: 'application/json',*/
@@ -29,11 +30,21 @@ function validate_details() {
                         window.location.href = window.location.pathname;
                     }
                 } else {
-                    alert("Successfully Logged in with User: " + r.responseText);
-                    window.location.href = "home_page.html?id="+r.responseText;
+                    fetch('http://localhost:8080/users/' + r.responseText, {mode: "cors"})
+                        .then((response) => response.json())
+                        .then((responseJSON) => {
+                            if(responseJSON.error === "Internal Server Error"){
+                                alert("Wrong password; Try again");
+                                window.location.href = window.location.pathname;
+                            }
+                            alert("Successfully Logged in with User: " + responseJSON.name);
+                            $.cookie("loggedOn", responseJSON.id, { expires: 1, httpOnly: true, secure: true, sameSite: "Lax" });
+                            $.cookie("loggedName", responseJSON.name, { expires: 1, httpOnly: true, secure: true, sameSite: "Lax" });
+
+                            window.location.href = "home_page.html";
+                        });
                 }
             }
         });
-    })
-    ;
+    });
 }

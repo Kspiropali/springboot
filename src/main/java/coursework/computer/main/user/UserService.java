@@ -1,14 +1,18 @@
 package coursework.computer.main.user;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 @Service
 public class UserService {
@@ -44,7 +48,7 @@ public class UserService {
     }
 
     @Transactional
-    public void updateUser(Long userId, String name, String surname, String password, String email) {
+    public User updateUser(Long userId, String name, String surname, String password, String email, String dob) {
         User user = userRepository.findById(userId).orElseThrow(() -> new IllegalStateException(
                 "user with id " + userId + "does not exist"
         ));
@@ -72,6 +76,20 @@ public class UserService {
                 !Objects.equals(user.getEmail(), email)){
             user.setEmail(email);
         }
+
+        if(dob != null &&
+                dob.length()>0 &&
+                !Objects.equals(user.getDob(), LocalDate.parse(dob))){
+            boolean found = Pattern.compile("^[0-9]{4}-[0-9]{2}-[0-9]{2}$").matcher(dob).find();
+
+            if(!found){
+                System.out.println("Dob does not conform to Pattern(yyyy-mm-dd");
+                return null;
+            }
+            user.setDob(LocalDate.parse(dob));
+        }
+
+        return user;
     }
 
     @Transactional
@@ -82,7 +100,7 @@ public class UserService {
         ));
     }
 
-    public String checkuserDetails(String email, String password) {
+    public Long checkuserDetails(String email, String password) {
 
         System.out.println("EMAIL: "+email+"\nPASS: "+password);
 
@@ -92,10 +110,10 @@ public class UserService {
 
         if(password.equals(user.getPassword())){
             System.out.println("Passwords Match!");
-            return user.getName();
+            return user.getId();
         }else {
             System.out.println("Password do not match!");
-            return null;
+            return 0L;
         }
     }
 }

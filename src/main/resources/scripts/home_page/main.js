@@ -17,7 +17,7 @@ let products = [];
 
 function get_products() {
     //Request products from server
-    fetch('http://localhost:8080/products')
+    fetch('http://localhost:8080/products', {mode: "cors"})
         .then((response) => response.json())
         .then((responseJSON) => {
             products = responseJSON;
@@ -37,7 +37,7 @@ function display_products() {
     const products_left_content = products_left.map(product => {
         return (
             '<li>\n' +
-            '                            <div class="img"><a href="#"><img alt="" src="' +"/images/small/"+ product.image + '"></a></div>\n' +
+            '                            <div class="img"><a href="#"><img alt="" src="' + "/images/small/" + product.image + '"></a></div>\n' +
             '                            <div class="info">\n' +
             '                                <a class="title" href="#">' + product.name + '</a>\n' +
             '                                <p>' + product.description + '</p>\n' +
@@ -45,8 +45,8 @@ function display_products() {
             '                                    <span class="st">Our price:</span><strong>$' + product.price + '</strong>\n' +
             '                                </div>\n' +
             '                                <div class="actions">\n' +
-            '                                    <a href="product_details.html?id='+product.id+'">Details</a>\n' +
-            '                                    <a href="#">Add to cart</a>\n' +
+            '                                    <a href="product_details.html?id=' + product.id + '">Details</a>\n' +
+            '                                    <a href="404_page.html">Add to cart</a>\n' +
             '                                </div>\n' +
             '                            </div>\n' +
             '                        </li>'
@@ -55,9 +55,9 @@ function display_products() {
 
     const products_right_content = products_right.map(product => {
         return ('<li>\n' +
-            '                            <div class="img"><a href="#"><img alt="" src="' + "/images/small/"+product.image + '"></a></div>\n' +
+            '                            <div class="img"><a href="#"><img alt="" src="' + "/images/small/" + product.image + '"></a></div>\n' +
             '                            <div class="info">\n' +
-            '                                <a class="title" href="product_details.html?id='+product.id+'">' + product.name + '</a>\n' +
+            '                                <a class="title" href="product_details.html?id=' + product.id + '">' + product.name + '</a>\n' +
             '                                <div class="price">\n' +
             '                                    <span class="usual">$' + (product.price + 100) + '</span>&nbsp;\n' +
             '                                    <span class="special">$' + product.price + '</span>\n' +
@@ -80,9 +80,7 @@ function search_products() {
     document.getElementById('products').innerHTML = products_autocomplete.join("");
 }
 
-
-
-function on_enter_pressed(){
+function on_enter_pressed() {
     let answer, product_name;
     if (event.keyCode === 13) {
 
@@ -95,45 +93,32 @@ function on_enter_pressed(){
 
         product_name.forEach(product => {
             if (product === answer) {
-                window.location.assign("product_details.html?id="+id);
-            }else{
+                window.location.assign("product_details.html?id=" + id);
+            } else {
                 id++;
             }
         })
-    }else if(event.keyCode === 8){
+    } else if (event.keyCode === 8) {
         document.getElementById("products_autocomplete").value = " ";
     }
 }
 
 $(document).ready(function () {
-    if(window.location.href.includes("id")){
-        id = window.location.href.split("?")[1].split("=")[1];
-        isLogged=true;
-
-        history.pushState(null, document.title, location.href);
-        window.addEventListener('popstate', function (event)
-        {
-            history.pushState(null, document.title, location.href);
-        });
-    }
-    login();
-    get_products();
-})
-
-function login(){
-    if(!isLogged){
+    if ($.cookie.get("loggedOn") === "null") {
         document.getElementById('page_contents').innerHTML = '<li class="selected"><a href="home_page.html">Home</a></li>\n' +
             '                <li><a href="register.html">Register</a></li>\n' +
             '                <li><a href="login.html">Login</a></li>';
-        return;
+    }else {
+        document.getElementById('page_contents').innerHTML = '<li class="selected"><a href="home_page.html">Home</a></li>\n' +
+            '                <li><a href="account_settings.html">Account Settings</a></li>\n' +
+            '                <li><a onclick="logout()" href="home_page.html">Logout</a></li>';
+
+        document.getElementById('user_welcome').innerHTML = '<b>  <strong> HI USER > '+ $.cookie.get("loggedName") +' < </strong> </b>';
     }
+    get_products();
+})
 
-
-    document.getElementById('page_contents').innerHTML = '<li class="selected"><a href="home_page.html">Home</a></li>\n' +
-        '                <li><a href="account_settings.html">Account Settings</a></li>\n' +
-        '                <li><a href="#">Logout</a></li>'
-
-    document.getElementById('user_welcome').innerHTML = '<b>  <strong> HI USER > '+id+' < </strong> </b>'
+function logout() {
+    $.cookie("loggedOn", null);
+    $.cookie("loggedName", null);
 }
-
-let isLogged=false, id;

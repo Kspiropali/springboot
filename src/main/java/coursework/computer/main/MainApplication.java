@@ -2,6 +2,7 @@ package coursework.computer.main;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.io.IOException;
 
 @SpringBootApplication
@@ -12,7 +13,7 @@ public class MainApplication {
 
         Runtime rt = Runtime.getRuntime();
         String url = "http://localhost:63342/springboot/src/main/resources/home_page.html";
-        String[] browsers = { /*"chromium", */"firefox"/*, "mozilla", "epiphany", "konqueror",
+        String[] browsers = { /*"firefox", */"chromium"/*, "mozilla", "epiphany", "konqueror",
                 "netscape", "opera", "links", "lynx"*/ };
 
         StringBuilder cmd = new StringBuilder();

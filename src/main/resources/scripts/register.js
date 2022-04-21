@@ -31,6 +31,7 @@ function checkAlldetails() {
         ev.preventDefault();
         $.ajax({
             url: "http://localhost:8080/users/register/",
+            crossDomain: true,
             data: JSON.stringify(user),
             dataType: 'application/json',
             type: 'POST',
@@ -38,7 +39,6 @@ function checkAlldetails() {
         });
     });
 
-    window.location.href = "http://localhost:63342/springboot/src/main/resources/home_page.html";
+    window.location.href = "home_page.html";
 
 }
-

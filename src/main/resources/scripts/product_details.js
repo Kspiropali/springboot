@@ -4,7 +4,7 @@ function get_product() {
     let id = window.location.href.split("?")[1].split("=")[1];
     console.log(id);
 
-    fetch('http://localhost:8080/products/get/' + id)
+    fetch('http://localhost:8080/products/get/' + id, {mode:"cors"})
         .then((response) => response.json())
         .then((responseJSON) => {
             product = responseJSON;
