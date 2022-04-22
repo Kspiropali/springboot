@@ -1,5 +1,5 @@
 function validate_details() {
-    const regex = new RegExp('^[a-z]{3,10}\@[a-z]{3,10}\.[a-z]{3,6}$');
+    const regex = new RegExp('^[a-z]{1,10}\@[a-z]{1,10}\.[a-z]{1,6}$');
     let email_send = document.getElementById("email").value;
     let password_send = document.getElementById("password").value;
 
@@ -8,7 +8,7 @@ function validate_details() {
         window.location.href = window.location.pathname;
         return;
     }
-    var frm = $('#login_form');
+    let frm = $('#login_form');
     frm.submit(function (ev) {
         ev.preventDefault();
         /*ev.stopImmediatePropagation();*/

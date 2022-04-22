@@ -38,7 +38,7 @@ function setup() {
 
 function validate() {
     const dob_regex = new RegExp('^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$');
-    const email_regex = new RegExp('^[a-z]{1,}\@[a-z]{1,}\.[a-z]{1,}$');
+    const email_regex = new RegExp('^[a-z]{1,}\@[a-z]{1,}\\.[a-z]{1,}$');
 
     let name = document.getElementById("firstname_in").value;
     let surname = document.getElementById("lastname_in").value;

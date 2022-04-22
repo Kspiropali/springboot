@@ -1,4 +1,7 @@
-body{margin-top:0;}
+body {
+    margin-top: 0;
+}
+
 .cover-background {
     position: relative !important;
     background-size: cover !important;
@@ -6,9 +9,11 @@ body{margin-top:0;}
     background-position: center !important;
     background-repeat: no-repeat !important;
 }
+
 .p-0 {
-    padding: 0!important;
+    padding: 0 !important;
 }
+
 section {
     padding: 120px 0;
     overflow: hidden;
@@ -19,20 +24,24 @@ section {
     background-color: #BABABA4A;
     -webkit-backdrop-filter: blur(9px);
     backdrop-filter: blur(15px);
-    border: 1px solid rgba(234,234,235,0.2);
+    border: 1px solid rgba(234, 234, 235, 0.2);
     padding: 80px 20px;
 }
+
 .text-center {
-    text-align: center!important;
+    text-align: center !important;
 }
+
 .error-page h1 {
     font-size: 200px;
     line-height: 1;
     font-weight: 600;
 }
+
 .text-secondary {
     color: #15395A !important;
 }
+
 .mb-4 {
-    margin-bottom: 1.5rem!important;
+    margin-bottom: 1.5rem !important;
 }

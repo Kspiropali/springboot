@@ -11,6 +11,8 @@ import java.util.List;
 @Configuration
 public class UserConfig {
 
+    //automagically generating users. Can be more or less.
+    //For convenience purposes
     @Bean
     CommandLineRunner commandLineRunner(UserRepository repository){
         return args -> {
@@ -22,7 +24,16 @@ public class UserConfig {
                     LocalDate.of(2000, Month.JANUARY, 1)
             );
 
-            repository.saveAll(List.of(kristian));
+            User zxc = new User(
+                    "test",
+                    "test",
+                    "kristian",
+                    "test@t.t",
+                    LocalDate.of(2000, Month.JANUARY, 1)
+            );
+
+            //saving them in the database. the repository class always takes a List of Objects<User>
+            repository.saveAll(List.of(kristian, zxc));
         };
     }
 }

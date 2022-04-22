@@ -24,7 +24,7 @@ body {
     position: relative
 }
 
-.product-content .product-deatil {
+.product-content .product-detail {
     border-bottom: 100px solid #dfe5e9;
     padding-bottom: 17px;
     padding-left: 16px;
@@ -33,7 +33,7 @@ body {
     background: #fff
 }
 
-.product-content .product-deatil h5 a {
+.product-content .product-detail h5 a {
     color: #2f383d;
     font-size: 15px;
     line-height: 19px;
@@ -42,13 +42,13 @@ body {
     margin-left: 0
 }
 
-.product-content .product-deatil h5 a span {
+.product-content .product-detail h5 a span {
     color: #9aa7af;
     display: block;
     font-size: 13px
 }
 
-.product-content .product-deatil span.tag1 {
+.product-content .product-detail span.tag1 {
     border-radius: 50%;
     color: #fff;
     font-size: 15px;
@@ -61,15 +61,15 @@ body {
     width: 50px
 }
 
-.product-content .product-deatil span.sale {
+.product-content .product-detail span.sale {
     background-color: #21c2f8
 }
 
-.product-content .product-deatil span.discount {
+.product-content .product-detail span.discount {
     background-color: #71e134
 }
 
-.product-content .product-deatil span.hot {
+.product-content .product-detail span.hot {
     background-color: #fa9442
 }
 
@@ -101,7 +101,7 @@ body {
     margin-top: -10px
 }
 
-.product-entry .product-deatil {
+.product-entry .product-detail {
     border-bottom: 1px solid #dfe5e9;
     padding-bottom: 17px;
     padding-left: 16px;
@@ -109,14 +109,14 @@ body {
     position: relative
 }
 
-.product-entry .product-deatil h5 a {
+.product-entry .product-detail h5 a {
     color: #2f383d;
     font-size: 15px;
     line-height: 19px;
     text-decoration: none
 }
 
-.product-entry .product-deatil h5 a span {
+.product-entry .product-detail h5 a span {
     color: #9aa7af;
     display: block;
     font-size: 13px
@@ -132,9 +132,9 @@ body {
     width: 100%
 }
 
-.product-block .product-deatil p.price-container span,
-.product-content .product-deatil p.price-container span,
-.product-entry .product-deatil p.price-container span,
+.product-block .product-detail p.price-container span,
+.product-content .product-detail p.price-container span,
+.product-entry .product-detail p.price-container span,
 .shipping table tbody tr td p.price-container span,
 .shopping-items table tbody tr td p.price-container span {
     color: #21c2f8;
@@ -195,61 +195,61 @@ body {
     padding: 10px 0
 }
 
-.product-deatil {
+.product-detail {
     padding: 30px 30px 50px
 }
 
-.product-deatil hr + .description-tabs {
+.product-detail hr + .description-tabs {
     padding: 0 0 5px !important
 }
 
-.product-deatil .carousel-control.left,
-.product-deatil .carousel-control.right {
+.product-detail .carousel-control.left,
+.product-detail .carousel-control.right {
     background: none !important
 }
 
-.product-deatil .glyphicon {
+.product-detail .glyphicon {
     color: #3276b1
 }
 
-.product-deatil .product-image {
+.product-detail .product-image {
     border-right: none !important
 }
 
-.product-deatil .name {
+.product-detail .name {
     margin-top: 0;
     margin-bottom: 0
 }
 
-.product-deatil .name small {
+.product-detail .name small {
     display: block
 }
 
-.product-deatil .name a {
+.product-detail .name a {
     margin-left: 0
 }
 
-.product-deatil .price-container {
+.product-detail .price-container {
     font-size: 24px;
     margin: 0;
     font-weight: 300
 }
 
-.product-deatil .price-container small {
+.product-detail .price-container small {
     font-size: 12px
 }
 
-.product-deatil .fa-2x {
+.product-detail .fa-2x {
     font-size: 16px !important
 }
 
-.product-deatil .fa-2x > h5 {
+.product-detail .fa-2x > h5 {
     font-size: 12px;
     margin: 0
 }
 
-.product-deatil .fa-2x + a,
-.product-deatil .fa-2x + a + a {
+.product-detail .fa-2x + a,
+.product-detail .fa-2x + a + a {
     font-size: 13px
 }
 
@@ -257,30 +257,30 @@ body {
     list-style: none;
 }
 
-.product-deatil .certified {
+.product-detail .certified {
     margin-top: 10px
 }
 
-.product-deatil .certified ul {
+.product-detail .certified ul {
     padding-left: 0
 }
 
-.product-deatil .certified ul li:not(first-child) {
+.product-detail .certified ul li {
     margin-left: -3px
 }
 
-.product-deatil .certified ul li {
+.product-detail .certified ul li {
     display: inline-block;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     padding: 13px 19px
 }
 
-.product-deatil .certified ul li:first-child {
+.product-detail .certified ul li:first-child {
     border-right: none
 }
 
-.product-deatil .certified ul li a {
+.product-detail .certified ul li a {
     text-align: left;
     font-size: 12px;
     color: #6d7a83;
@@ -288,7 +288,7 @@ body {
     text-decoration: none
 }
 
-.product-deatil .certified ul li a span {
+.product-detail .certified ul li a span {
     display: block;
     color: #21c2f8;
     font-size: 13px;
@@ -296,7 +296,7 @@ body {
     text-align: center
 }
 
-.product-deatil .message-text {
+.product-detail .message-text {
     width: calc(100% - 70px)
 }
 

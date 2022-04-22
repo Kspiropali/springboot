@@ -13,7 +13,7 @@ public class ProductConfig {
     @Bean
     CommandLineRunner commandLineRunner1(ProductRepository repository){
 
-
+        //we add 12 products in the database, using our handy repository<product> class
         return args -> {
             List<Product> products = Arrays.asList(
             new Product(1,"Alieware Laptop 5", "Very good laptop for everyone", 1299, "laptop1.jpg"),

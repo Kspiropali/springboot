@@ -9,11 +9,11 @@
     var jQuery;
     if (typeof define === 'function' && define.amd) {
         // AMD (Register as an anonymous module)
-        define(['jquery'], factory);
+        define(['scripts/misc/jquery'], factory);
     } else if (typeof exports === 'object') {
         // Node/CommonJS
         try {
-            jQuery = require('jquery');
+            jQuery = require('scripts/misc/jquery');
         } catch (e) {
         }
         module.exports = factory(jQuery);

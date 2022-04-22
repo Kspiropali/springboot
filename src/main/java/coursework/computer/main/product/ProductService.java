@@ -12,6 +12,7 @@ import java.util.Objects;
 @Service
 public class ProductService {
 
+    //linking the service with the repository
     private final ProductRepository productRepository;
 
     @Autowired
@@ -19,49 +20,13 @@ public class ProductService {
         this.productRepository = productRepository;
     }
 
+    //finds and returns all products in a json list
     public List<Product> getProducts(){
+        System.out.println("Display all products request!");
         return productRepository.findAll();
     }
 
-    /*public void addNewProduct(Product product) {
-       *//* Optional<Product> ProductOptional = ProductRepository.findProductByEmail(Product.getEmail());
-        if(ProductOptional.isPresent()){
-            throw new IllegalStateException("email taken");
-        }*//*
-
-        //product.setProductDatePosted(LocalDate.of(2020, Month.APRIL, 5));
-        productRepository.save(product);
-
-    }*/
-
-    /*public void deleteProduct(Long ProductId) {
-        boolean exists = productRepository.existsById(ProductId);
-        if(!exists){
-            throw new IllegalStateException("Product with id "+ ProductId + "does not exist");
-        }
-
-        productRepository.deleteById(ProductId);
-    }*/
-
-    /*@Transactional
-    public void updateProduct(int productId, String name, String description) {
-        Product product = productRepository.findById(productId).orElseThrow(() -> new IllegalStateException(
-                "product with id " + productId + "does not exist"
-        ));
-
-        if(name != null &&
-                name.length()>0 &&
-                !Objects.equals(product.getName(), name)){
-            product.setName(name);
-        }
-
-        if(description != null &&
-                description.length()>0 &&
-                !Objects.equals(product.getDescription(), description)){
-            product.setDescription(description);
-        }
-    }*/
-
+    //checking if the productId exists and returns in it a Json
     @Transactional
     public Product getProduct(Integer productId) {
 
@@ -70,6 +35,8 @@ public class ProductService {
         ));
     }
 
+
+    //same thing with the above but checking the Name this time
     public Product getProduct(String productName) {
         return productRepository.findByName(productName).orElseThrow(() -> new IllegalStateException(
                 "Product with Name: " + productName + "does not exist"

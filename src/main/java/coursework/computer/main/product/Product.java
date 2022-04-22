@@ -7,15 +7,20 @@ import java.io.File;
 import java.time.LocalDate;
 import java.time.Period;
 
+//Product model used to display the products of the database
 @NoArgsConstructor @Getter @Setter @ToString
 @Entity @Table(name = "_product")
 public class Product {
+    //products have their unique identifier
+    //which lathough in this case we cant add any apart from the productConfig, it is possible
+    //to access them based on their name and/or productID
     @Id
     @SequenceGenerator(
             name = "products_sequence",
             sequenceName = "products_sequence",
             allocationSize = 1
     )
+    //sequence generated values help us make every products id unique, incremental
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
             generator = "products_sequence"

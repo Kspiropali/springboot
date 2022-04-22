@@ -6,17 +6,39 @@ function checkAlldetails() {
     let password = document.getElementById("password").value;
     let passwordConfirm = document.getElementById("confirm_password").value;
 
-    const regex = new RegExp('^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$');
+    const dob_regex = new RegExp('^[0-9]{4}\-[0-9]{2}\-[0-9]{2}$');
+    /*const pass_regex = new RegExp('((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[\\W]).{6,20})');*/
+    const email_regex = new RegExp('^[a-z]{1,}\@[a-z]{1,}\\.[a-z]{1,}$');
 
-    if (!regex.test(dob)) {
+    if(name === "" || surname === "" || email === ""){
+        alert("Please fill all the field!");
+        return;
+    }
+
+    if (!email_regex.test(email)) {
+        alert("Email not in correct format");
+        return;
+    }
+
+    if (!dob_regex.test(dob)) {
         alert("Dob not in correct format");
         return;
     }
+
+
+
+    /*if(!pass_regex.test(password)){
+        alert("Password must have meet pattern requirements:(1 char, 1 number, 1 symbol, min length: 8");
+        return;
+    }*/
 
     if (password !== passwordConfirm) {
         alert("Passwords do not match");
         return;
     }
+
+
+
 
     const user = {
         "name": encodeURIComponent(name),
