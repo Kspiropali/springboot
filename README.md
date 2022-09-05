@@ -4,23 +4,18 @@
 
 ## **_app - backend_**
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/mspiropali/app/actions)
-* temporal url: http://104.155.78.112:8080
-* Mappings Documentation
-    Path: (temporal url)/api/v1/docs.html
+* url: http://localhost:8080/
 
 ### Run with docker:
-* pull image from repo
-```docker
-(sudo) docker pull skycontroller/backend-app
-```
 
 * run docker image:
 ```docker
-(sudo) docker run -p 8080:8080 -d --name backend-app skycontroller/backend-app
+(sudo) docker -t springboot build .
+(sudo) docker run -p 8080:8080 -d --name springbootapp springboot
 ```
 
 ### Or standalone run without docker:
-```javascript 
+```javascript
 gradle build
 
 gradle bootRun
